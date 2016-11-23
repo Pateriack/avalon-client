@@ -10,9 +10,8 @@ export const ROLE_OBERON = 'ROLE_OBERON'
 export function roleToText(role) {
     switch(role) {
         case ROLE_GOOD:
-            return 'Loyal Servant of Arthur'
         case ROLE_EVIL:
-            return 'Minion of Mordred'
+            return null
         case ROLE_MERLIN:
             return 'Merlin'
         case ROLE_ASSASSIN:
@@ -25,5 +24,26 @@ export function roleToText(role) {
             return 'Mordred'
         case ROLE_OBERON:
             return 'Oberon'
+    }
+}
+
+export function roleToSubtext(role) {
+    switch(role) {
+        case ROLE_GOOD:
+            return 'Loyal Servant of Arthur'
+        case ROLE_EVIL:
+            return 'Minion of Mordred'
+        case ROLE_MERLIN:
+            return 'Knows evil, must remain hidden'
+        case ROLE_ASSASSIN:
+            return 'Minion of Mordred'
+        case ROLE_PERCIVAL:
+            return 'Knows Merlin'
+        case ROLE_MORGANA:
+            return 'Appears as Merlin'
+        case ROLE_MORDRED:
+            return 'Unknown to Merlin'
+        case ROLE_OBERON:
+            return 'Unknown to evil'
     }
 }
