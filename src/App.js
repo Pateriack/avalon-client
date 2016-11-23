@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import HostNewGame from './components/HostNewGame'
 
 class App extends Component {
   render() {
@@ -6,8 +7,8 @@ class App extends Component {
       <div>
         Avalon
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
