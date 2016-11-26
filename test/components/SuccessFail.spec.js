@@ -8,8 +8,8 @@ import {
 import {expect} from 'chai'
 import sinon from 'sinon'
 
-import SuccessFail from './SuccessFail'
-import * as votes from '../constants/votes'
+import SuccessFail from '../../src/components/SuccessFail'
+import * as votes from '../../src/constants/votes'
 
 describe('SuccessFail', () => {
 

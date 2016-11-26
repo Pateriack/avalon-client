@@ -7,7 +7,7 @@ import {
 } from 'react-addons-test-utils'
 import {expect} from 'chai'
 
-import PlayerList from './PlayerList'
+import PlayerList from '../../src/components/PlayerList'
 
 describe('PlayerList', () => {
 

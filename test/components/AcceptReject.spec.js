@@ -8,8 +8,8 @@ import {
 import {expect} from 'chai'
 import sinon from 'sinon'
 
-import AcceptReject from './AcceptReject'
-import * as votes from '../constants/votes'
+import AcceptReject from '../../src/components/AcceptReject'
+import * as votes from '../../src/constants/votes'
 
 describe('AcceptReject', () => {
 
