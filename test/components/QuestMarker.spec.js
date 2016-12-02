@@ -14,7 +14,7 @@ describe('QuestMarker', () => {
 
     it('renders a .quest-marker div when not started', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_NOT_STARTED} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_NOT_STARTED} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-marker')
 
@@ -23,20 +23,20 @@ describe('QuestMarker', () => {
 
     it('has .quest-number and .quest-players when not started', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_NOT_STARTED} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_NOT_STARTED} number={1} players={2}/>
         )
-        const questNumber = findRenderedDOMComponentWithClass(component, 'quest-number')
-        const questPlayers = findRenderedDOMComponentWithClass(component, 'quest-players')
+        const number = findRenderedDOMComponentWithClass(component, 'quest-number')
+        const players = findRenderedDOMComponentWithClass(component, 'quest-players')
 
-        expect(questNumber).to.exist
-        expect(questNumber.textContent).to.equal('Quest 1')
-        expect(questPlayers).to.exist
-        expect(questPlayers.textContent).to.equal('2')
+        expect(number).to.exist
+        expect(number.textContent).to.equal('Quest1')
+        expect(players).to.exist
+        expect(players.textContent).to.equal('2')
     })
 
     it('renders a .quest-marker div when in progress', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_IN_PROGRESS} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_IN_PROGRESS} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-marker')
 
@@ -45,20 +45,20 @@ describe('QuestMarker', () => {
 
     it('has .quest-number and .quest-players when in progress', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_IN_PROGRESS} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_IN_PROGRESS} number={1} players={2}/>
         )
-        const questNumber = findRenderedDOMComponentWithClass(component, 'quest-number')
-        const questPlayers = findRenderedDOMComponentWithClass(component, 'quest-players')
+        const number = findRenderedDOMComponentWithClass(component, 'quest-number')
+        const players = findRenderedDOMComponentWithClass(component, 'quest-players')
 
-        expect(questNumber).to.exist
-        expect(questNumber.textContent).to.equal('Quest 1')
-        expect(questPlayers).to.exist
-        expect(questPlayers.textContent).to.equal('2')
+        expect(number).to.exist
+        expect(number.textContent).to.equal('Quest1')
+        expect(players).to.exist
+        expect(players.textContent).to.equal('2')
     })
 
     it('renders a .quest-marker div when good won', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_GOOD_WON} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_GOOD_WON} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-marker')
 
@@ -67,7 +67,7 @@ describe('QuestMarker', () => {
 
     it('has .quest-good-won when good won', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_GOOD_WON} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_GOOD_WON} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-good-won')
 
@@ -76,7 +76,7 @@ describe('QuestMarker', () => {
 
     it('renders a .quest-marker div when evil won', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_EVIL_WON} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_EVIL_WON} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-marker')
 
@@ -85,7 +85,7 @@ describe('QuestMarker', () => {
 
     it('has .quest-evil-won when evil won', () => {
         const component = renderIntoDocument(
-            <QuestMarker questStatus={questStatus.QUEST_EVIL_WON} questNumber={1} questPlayers={2}/>
+            <QuestMarker status={questStatus.QUEST_EVIL_WON} number={1} players={2}/>
         )
         const markerDiv = findRenderedDOMComponentWithClass(component, 'quest-evil-won')
 

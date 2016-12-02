@@ -1,0 +1,42 @@
+.quest-marker {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+    position: relative;
+}
+
+.quest-number {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    font-weight: 500;
+}
+
+.quest-players {
+    position: absolute;
+    top: 32px;
+    left: 38px;
+    font-size: 46px;
+    font-weight: 500;
+}
+
+.quest-number span {
+    height: 75px;
+    position: absolute;
+    width: 20px;
+    left: 0;
+    top: 0;
+    transform-origin: bottom center;
+}
+
+.quest-number .char-1 { transform: rotate(-22deg); }
+.quest-number .char-2 { transform: rotate(-11deg); }
+.quest-number .char-3 { transform: rotate(-2deg); }
+.quest-number .char-4 { transform: rotate(6deg); }
+.quest-number .char-5 { transform: rotate(16deg); }
+.quest-number .char-6 {
+    transform: rotate(22deg);
+    left: 2px;
+    top: 2px;
+}

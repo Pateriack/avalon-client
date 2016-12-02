@@ -14,11 +14,11 @@ import * as questStatus from '../../src/constants/questStatus'
 describe('Quests', () => {
 
     const quests = [
-        {questNumber: 1, questPlayers: 2, questStatus: questStatus.QUEST_EVIL_WON},
-        {questNumber: 2, questPlayers: 2, questStatus: questStatus.QUEST_GOOD_WON},
-        {questNumber: 3, questPlayers: 3, questStatus: questStatus.QUEST_IN_PROGRESS},
-        {questNumber: 4, questPlayers: 3, questStatus: questStatus.QUEST_NOT_STARTED},
-        {questNumber: 5, questPlayers: 3, questStatus: questStatus.QUEST_NOT_STARTED}
+        {number: 1, players: 2, status: questStatus.QUEST_EVIL_WON},
+        {number: 2, players: 2, status: questStatus.QUEST_GOOD_WON},
+        {number: 3, players: 3, status: questStatus.QUEST_IN_PROGRESS},
+        {number: 4, players: 3, status: questStatus.QUEST_NOT_STARTED},
+        {number: 5, players: 3, status: questStatus.QUEST_NOT_STARTED}
     ]
 
     it('renders a .quests div', () => {
