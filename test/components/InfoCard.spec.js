@@ -8,8 +8,8 @@ import {
 import {expect} from 'chai'
 
 import InfoCard from '../../src/components/InfoCard'
-import * as roles from '../../src/constants/roles'
-import * as teams from '../../src/constants/teams'
+import * as roles from '../../src/constants/Roles'
+import * as teams from '../../src/constants/Teams'
 
 describe('InfoCard', () => {
 

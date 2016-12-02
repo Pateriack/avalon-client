@@ -1,0 +1,23 @@
+.connecting {
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.connecting h1 {
+    font-size: 60px;
+    position: absolute;
+    top: calc(30%);
+    left: calc(50% - 175px);
+    opacity: 0.9;
+}
+
+.connecting.in {
+    opacity: 0.9;
+}

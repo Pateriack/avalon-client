@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import * as votes from '../constants/votes'
+import * as votes from '../constants/Votes'
 
 export default class SuccessFail extends Component {
     render() {

@@ -9,7 +9,7 @@ import {
 import {expect} from 'chai'
 
 import Quests from '../../src/components/Quests'
-import * as questStatus from '../../src/constants/questStatus'
+import * as questStatus from '../../src/constants/QuestStatus'
 
 describe('Quests', () => {
 

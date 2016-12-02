@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import * as AppState from '../constants/appState'
+import * as AppState from '../constants/AppState'
 import './App.css'
+
+import Connecting from './Connecting'
 import HomeLayout from './HomeLayout'
 import HostLayout from './HostLayout'
 import PlayerLayout from './PlayerLayout'
@@ -21,10 +23,13 @@ const getLayout = (appState) => {
 
 class App extends Component {
     render() {
-        const layout = getLayout(this.props.appState)
+        let {appState} = this.props
+
+        const layout = getLayout(appState)
 
         return (
-            <div className="app">
+            <div className='app'>
+                <Connecting />
                 {layout}
             </div>
         )
@@ -33,10 +38,11 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     let appState
-    if(!state.game.gameId) {
+
+    if(!state.session.gameId) {
         appState = AppState.HOME
     }else{
-        if(state.game.playerNumber === 0) {
+        if(state.session.playerNumber === 0) {
             appState = AppState.HOST
         }else{
             appState = AppState.PLAYER

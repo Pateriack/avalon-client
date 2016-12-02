@@ -1,3 +1,7 @@
+//socket actions
+export const SOCKET_CONNECTED = 'SOCKET_CONNECTED'
+export const SOCKET_DISCONNECTED = 'SOCKET_DISCONNECTED'
+
 //hosting actions
 export const HOST_GAME_REQUEST = 'HOST_GAME_REQUEST'
 export const HOST_GAME_SUCCESS = 'HOST_GAME_SUCCESS'

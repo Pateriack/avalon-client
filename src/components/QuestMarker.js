@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import * as questStatus from '../constants/questStatus'
+import * as questStatus from '../constants/QuestStatus'
 import './QuestMarker.css'
 
 export default class QuestMarker extends Component {

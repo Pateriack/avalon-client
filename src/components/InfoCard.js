@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-import * as roles from '../constants/roles'
-import * as teams from '../constants/teams'
+import * as roles from '../constants/Roles'
+import * as teams from '../constants/Teams'
 
 export default class InfoCard extends Component {
     render() {

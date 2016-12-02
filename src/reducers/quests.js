@@ -1,4 +1,4 @@
-import * as questStatus from '../constants/questStatus'
+import * as questStatus from '../constants/QuestStatus'
 
 const INITIAL_STATE = [
     {

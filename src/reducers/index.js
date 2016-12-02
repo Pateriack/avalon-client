@@ -2,12 +2,12 @@ import { combineReducers } from 'redux'
 
 import players from './players'
 import quests from './quests'
-import game from './game'
+import session from './session'
 
 const rootReducer = combineReducers({
     players,
     quests,
-    game
+    session
 })
 
 export default rootReducer

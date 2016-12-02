@@ -1,11 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import SocketIO from 'socket.io-client'
+
 import { createAvalonStore } from './store'
+import SocketHandler from './socket/SocketHandler'
+
 import App from './components/App'
 import './index.css'
 
-const store = createAvalonStore()
+const socket = SocketIO('http://localhost:3003')
+const store = createAvalonStore(socket)
+new SocketHandler(socket, store)
 
 ReactDOM.render(
     <Provider store={store}>
