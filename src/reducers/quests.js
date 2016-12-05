@@ -1,35 +1,15 @@
-import * as questStatus from '../constants/QuestStatus'
+import {List, fromJS} from 'immutable'
 
-const INITIAL_STATE = [
-    {
-        number: 1,
-        status: questStatus.QUEST_IN_PROGRESS,
-        players: 2
-    },
-    {
-        number: 2,
-        status: questStatus.QUEST_NOT_STARTED,
-        players: 2
-    },
-    {
-        number: 3,
-        status: questStatus.QUEST_NOT_STARTED,
-        players: 3
-    },
-    {
-        number: 4,
-        status: questStatus.QUEST_NOT_STARTED,
-        players: 3
-    },
-    {
-        number: 5,
-        status: questStatus.QUEST_NOT_STARTED,
-        players: 3
-    }
-]
+import * as ActionTypes from '../constants/ActionTypes'
+// import * as questStatus from '../constants/QuestStatus'
+
+const INITIAL_STATE = List()
 
 const questsReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
+        case ActionTypes.UPDATE_QUESTS:
+            return fromJS(action.quests)
+
         default:
             return state
     }

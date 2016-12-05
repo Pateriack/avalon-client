@@ -25,8 +25,13 @@ export default class JoinGame extends Component {
                     placeholder="Enter game code"
                     value={this.state.value}
                     ref="input"
+                    className="join-code"
                 />
-                <button type="submit">Join Game</button>
+                <button
+                    type="submit"
+                    className="join-button">
+                    Join Game
+                </button>
             </form>
         )
     }

@@ -8,7 +8,7 @@ import {
 } from 'react-addons-test-utils'
 import {expect} from 'chai'
 
-import Quests from '../../src/components/Quests'
+import Quests from '../../src/components/host/Quests'
 import * as questStatus from '../../src/constants/QuestStatus'
 
 describe('Quests', () => {

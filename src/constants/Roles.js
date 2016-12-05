@@ -24,6 +24,8 @@ export function roleToText(role) {
             return 'Mordred'
         case ROLE_OBERON:
             return 'Oberon'
+        default:
+            return ''
     }
 }
 
@@ -45,5 +47,7 @@ export function roleToSubtext(role) {
             return 'Unknown to Merlin'
         case ROLE_OBERON:
             return 'Unknown to evil'
+        default:
+            return ''
     }
 }

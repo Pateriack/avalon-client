@@ -7,7 +7,7 @@ import {
 } from 'react-addons-test-utils'
 import {expect} from 'chai'
 
-import HostNewGame from '../../src/components/HostNewGame'
+import HostNewGame from '../../src/components/home/HostNewGame'
 
 describe('HostNewGame', () => {
 

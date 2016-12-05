@@ -7,7 +7,8 @@
     bottom: 0;
     background-color: black;
     color: white;
-    transition: all 0.2s linear;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
 .connecting h1 {
@@ -19,5 +20,6 @@
 }
 
 .connecting.in {
+    visibility: visible;
     opacity: 0.9;
 }

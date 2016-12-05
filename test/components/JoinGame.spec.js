@@ -8,7 +8,7 @@ import {
 import {expect} from 'chai'
 import sinon from 'sinon'
 
-import JoinGame from '../../src/components/JoinGame'
+import JoinGame from '../../src/components/home/JoinGame'
 
 describe('JoinGame', () => {
 

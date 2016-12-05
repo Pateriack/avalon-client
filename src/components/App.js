@@ -4,10 +4,10 @@ import {connect} from 'react-redux'
 import * as AppState from '../constants/AppState'
 import './App.css'
 
-import Connecting from './Connecting'
-import HomeLayout from './HomeLayout'
-import HostLayout from './HostLayout'
-import PlayerLayout from './PlayerLayout'
+import Connecting from './shared/Connecting'
+import HomeLayout from './home/HomeLayout'
+import HostLayout from './host/HostLayout'
+import PlayerLayout from './player/PlayerLayout'
 
 const getLayout = (appState) => {
     switch(appState) {
@@ -39,10 +39,10 @@ class App extends Component {
 const mapStateToProps = (state) => {
     let appState
 
-    if(!state.session.gameId) {
+    if(!state.session.get('gameId')) {
         appState = AppState.HOME
     }else{
-        if(state.session.playerNumber === 0) {
+        if(state.session.get('playerNumber') === 0) {
             appState = AppState.HOST
         }else{
             appState = AppState.PLAYER

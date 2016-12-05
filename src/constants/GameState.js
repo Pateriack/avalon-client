@@ -1,4 +1,3 @@
-export const NO_GAME = 'NO_GAME'
 export const WAITING_FOR_PLAYERS = 'WAITING_FOR_PLAYERS'
 export const SETTING_UP_RULES = 'SETTING_UP_RULES'
 export const CHOOSING_PARTY = 'CHOOSING_PARTY'

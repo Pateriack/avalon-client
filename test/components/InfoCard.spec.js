@@ -7,7 +7,7 @@ import {
 } from 'react-addons-test-utils'
 import {expect} from 'chai'
 
-import InfoCard from '../../src/components/InfoCard'
+import InfoCard from '../../src/components/player/InfoCard'
 import * as roles from '../../src/constants/Roles'
 import * as teams from '../../src/constants/Teams'
 
