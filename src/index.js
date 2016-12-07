@@ -9,7 +9,7 @@ import SocketHandler from './socket/SocketHandler'
 import App from './components/App'
 import './index.css'
 
-const socket = SocketIO('http://localhost:3003')
+const socket = SocketIO('http://192.168.1.10:3003')
 const store = createAvalonStore(socket)
 new SocketHandler(socket, store)
 

@@ -35,8 +35,12 @@ export const setNameSuccess = name => {
 }
 
 export const setInfo = info => {
+
     return {
         type: ActionTypes.GIVE_PLAYER_INFO,
-        info: {...info}
+        info: {
+            ...info,
+
+        }
     }
 }

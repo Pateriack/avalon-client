@@ -1,5 +1,5 @@
 import {socketConnected, socketDisconnected} from '../actions/connectionActions'
-import {hostGameSuccess, joinGameSuccess, joinGameFailure, startSetupSuccess} from '../actions/gameActions'
+import {hostGameSuccess, joinGameSuccess, joinGameFailure, startSetupSuccess, startPartySelection} from '../actions/gameActions'
 import {updatePlayers, setNameFailure, setNameSuccess, setInfo} from '../actions/playerActions'
 import {startSetupFailure} from '../actions/hostActions'
 import {updateQuests} from '../actions/questActions'
@@ -12,7 +12,7 @@ export default class SocketHandler {
         socket.on('disconnect', () => store.dispatch(socketDisconnected()))
         socket.on(ActionTypes.HOST_GAME_SUCCESS, payload => store.dispatch(hostGameSuccess(payload.gameId)))
         socket.on(ActionTypes.JOIN_GAME_FAILURE, payload => store.dispatch(joinGameFailure(payload.error)))
-        socket.on(ActionTypes.JOIN_GAME_SUCCESS, payload => store.dispatch(joinGameSuccess(payload.gameId, payload.playerNumber, payload.name)))
+        socket.on(ActionTypes.JOIN_GAME_SUCCESS, payload => store.dispatch(joinGameSuccess(payload.clientId, payload.gameId, payload.playerNumber, payload.name)))
         socket.on(ActionTypes.UPDATE_PLAYERS, payload => store.dispatch(updatePlayers(payload.players)))
         socket.on(ActionTypes.START_SETUP_FAILURE, payload => store.dispatch(startSetupFailure(payload.error)))
         socket.on(ActionTypes.START_SETUP_SUCCESS, () => store.dispatch(startSetupSuccess()))
@@ -20,5 +20,6 @@ export default class SocketHandler {
         socket.on(ActionTypes.SET_NAME_SUCCESS, payload => store.dispatch(setNameSuccess(payload.name)))
         socket.on(ActionTypes.UPDATE_QUESTS, payload => store.dispatch(updateQuests(payload.quests)))
         socket.on(ActionTypes.GIVE_PLAYER_INFO, payload => store.dispatch(setInfo(payload)))
+        socket.on(ActionTypes.START_PARTY_SELECTION, () => store.dispatch(startPartySelection()))
     }
 }

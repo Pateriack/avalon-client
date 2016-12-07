@@ -21,12 +21,7 @@ export default ({status, number, players}) => {
             return (
                 <div className={status === questStatus.QUEST_IN_PROGRESS ? 'quest-marker quest-in-progress' : 'quest-marker'}>
                     <span className="quest-number">
-                        <span className="char-1">Q</span>
-                        <span className="char-2">u</span>
-                        <span className="char-3">e</span>
-                        <span className="char-4">s</span>
-                        <span className="char-5">t</span>
-                        <span className="char-6">{number}</span>
+                        Quest {number}
                     </span>
                     <span className="quest-players">
                         {players}

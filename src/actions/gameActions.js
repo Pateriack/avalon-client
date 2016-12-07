@@ -28,9 +28,10 @@ export const joinGame = gameId => {
     }
 }
 
-export const joinGameSuccess = (gameId, playerNumber, name) => {
+export const joinGameSuccess = (clientId, gameId, playerNumber, name) => {
     return {
         type: ActionTypes.JOIN_GAME_SUCCESS,
+        clientId,
         gameId,
         playerNumber,
         name
@@ -48,5 +49,11 @@ export const joinGameFailure = (error) => {
 export const startSetupSuccess = () => {
     return {
         type: ActionTypes.START_SETUP_SUCCESS
+    }
+}
+
+export const startPartySelection = () => {
+    return {
+        type: ActionTypes.START_PARTY_SELECTION
     }
 }

@@ -4,19 +4,21 @@ import {connect} from 'react-redux'
 import {startSetup} from '../../actions/hostActions'
 import PlayerList from '../shared/PlayerList'
 
-const HostLobbyLayout = ({numPlayers, startSetup}) => {
+const HostLobbyLayout = ({numPlayers, startSetup, gameId}) => {
     return (
         <div className="host-lobby-container">
-            <button onClick={startSetup} disabled={numPlayers < 5}>Start Setup</button><br/>
-            {numPlayers} players
+            <h3>Game ID: {gameId}</h3>
+            {numPlayers} players<br/>
             <PlayerList/>
+            <button onClick={startSetup} disabled={numPlayers < 5}>Start Setup</button>
         </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        numPlayers: state.players.size > 1 ? state.players.size - 1 : 0
+        numPlayers: state.players.size > 1 ? state.players.size - 1 : 0,
+        gameId: state.game.get('gameId')
     }
 }
 

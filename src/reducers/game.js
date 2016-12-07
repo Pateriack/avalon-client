@@ -15,7 +15,10 @@ const gameReducer = (state = INITIAL_STATE, action) => {
             return state.merge({gameId: action.gameId, gameState: GameState.WAITING_FOR_PLAYERS})
 
         case ActionTypes.START_SETUP_SUCCESS:
-            return state.merge({gameState: GameState.SETTING_UP_RULES})
+            return state.set('gameState', GameState.SETTING_UP_RULES)
+
+        case ActionTypes.START_PARTY_SELECTION:
+            return state.set('gameState', GameState.CHOOSING_PARTY)
 
         default:
             return state

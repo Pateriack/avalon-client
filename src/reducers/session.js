@@ -18,7 +18,7 @@ const sessionReducer = (state = INITIAL_STATE, action) => {
             return state.merge({gameId: action.gameId, playerNumber: 0})
 
         case ActionTypes.JOIN_GAME_SUCCESS:
-            return state.merge({gameId: action.gameId, playerNumber: action.playerNumber, name: action.name, nameSet: false})
+            return state.merge({clientId: action.clientId, gameId: action.gameId, playerNumber: action.playerNumber, name: action.name, nameSet: false})
 
         case ActionTypes.SET_NAME_SUCCESS:
             return state.merge({name: action.name, nameSet: true})

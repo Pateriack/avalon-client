@@ -18,7 +18,6 @@ const PlayerLayout = ({gameState}) => {
     const layout = getLayout(gameState)
     return (
         <div className="player-container">
-            <h1>Player</h1>
             {layout}
         </div>
     )
