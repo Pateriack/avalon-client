@@ -3,12 +3,19 @@ import {connect} from 'react-redux'
 
 import * as GameState from '../../constants/GameState'
 import PlayerLobbyLayout from './PlayerLobbyLayout'
+import PlayerPartySelectionLayout from './PlayerPartySelectionLayout'
 
 const getLayout = (gameState) => {
     switch(gameState) {
         case GameState.WAITING_FOR_PLAYERS:
         case GameState.SETTING_UP_RULES:
             return <PlayerLobbyLayout/>
+
+        case GameState.CHOOSING_PARTY:
+        case GameState.VOTING_ON_PARTY:
+        case GameState.PARTY_VOTE_RESULTS:
+            return <PlayerPartySelectionLayout/>
+
         default:
             return null
     }

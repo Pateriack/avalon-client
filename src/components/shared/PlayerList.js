@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 
-class PlayerList extends Component {
-    render() {
-        return (
+// import * as GameState from '../../constants/GameState'
+
+const PlayerList = ({players, pickParty}) => {
+    return (
+        <div className="player-list">
             <ul>
-                {this.props.players.map((player, index) =>
+                {players.map((player, index) =>
                     <li key={index}>
-                        {player.name}
+                        {player.name} {player.leader && "- Party Leader"}
                     </li>
                 )}
             </ul>
-        )
-    }
+        </div>
+    )
 }
 
 const mapStateToProps = (state) => {

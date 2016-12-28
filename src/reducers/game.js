@@ -17,6 +17,9 @@ const gameReducer = (state = INITIAL_STATE, action) => {
         case ActionTypes.START_SETUP_SUCCESS:
             return state.set('gameState', GameState.SETTING_UP_RULES)
 
+        case ActionTypes.UPDATE_QUESTS:
+            return state.set('activeQuest', action.activeQuest)
+
         case ActionTypes.START_PARTY_SELECTION:
             return state.set('gameState', GameState.CHOOSING_PARTY)
 

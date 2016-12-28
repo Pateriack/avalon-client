@@ -14,6 +14,13 @@ const sessionReducer = (state = INITIAL_STATE, action) => {
         case ActionTypes.SOCKET_DISCONNECTED:
             return state.set('connected', false)
 
+        case ActionTypes.UPDATE_PLAYERS:
+            let player = {}
+            for(let p of action.players)
+                if(p.me)
+                    player = {...p}
+            return state.merge(player)
+
         case ActionTypes.HOST_GAME_SUCCESS:
             return state.merge({gameId: action.gameId, playerNumber: 0})
 

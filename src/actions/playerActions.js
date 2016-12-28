@@ -1,9 +1,13 @@
 import * as ActionTypes from '../constants/ActionTypes'
 
 export const updatePlayers = players => {
-    return {
-        type: ActionTypes.UPDATE_PLAYERS,
-        players
+    return (dispatch, getState) => {
+        const clientId = getState().session.get('clientId')
+        players = players.map(player => Object.assign(player, {me: player.id === clientId}))
+        dispatch({
+            type: ActionTypes.UPDATE_PLAYERS,
+            players
+        })
     }
 }
 
@@ -42,5 +46,39 @@ export const setInfo = info => {
             ...info,
 
         }
+    }
+}
+
+export const selectPartyMemberRequest = playerId => {
+    return {
+        type: ActionTypes.SELECT_PARTY_MEMBER_REQUEST,
+        meta: {
+            socket: true
+        },
+        payload: {
+            playerId
+        }
+    }
+}
+
+export const removePartyMemberRequest = playerId => {
+    return {
+        type: ActionTypes.REMOVE_PARTY_MEMBER_REQUEST,
+        meta: {
+            socket: true
+        },
+        payload: {
+            playerId
+        }
+    }
+}
+
+export const togglePartyMember = playerId => {
+    return (dispatch, getState) => {
+        const player = getState().players.find(p => p.id === playerId)
+        if(player.party)
+            dispatch(removePartyMemberRequest(playerId))
+        else
+            dispatch(selectPartyMemberRequest(playerId))
     }
 }
