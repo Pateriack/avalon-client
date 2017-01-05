@@ -6,6 +6,16 @@
     position: relative;
 }
 
+.quest-marker.quest-in-progress {
+    border: 2px solid #000010;
+
+}
+
+.quest-marker.quest-in-progress .quest-number,
+.quest-marker.quest-in-progress .quest-players {
+    font-weight: 600;
+}
+
 .quest-number {
     position: absolute;
     top: 18px;

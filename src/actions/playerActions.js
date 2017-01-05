@@ -50,6 +50,7 @@ export const setInfo = info => {
 }
 
 export const selectPartyMemberRequest = playerId => {
+    console.log(`select ${playerId}`)
     return {
         type: ActionTypes.SELECT_PARTY_MEMBER_REQUEST,
         meta: {
@@ -75,8 +76,8 @@ export const removePartyMemberRequest = playerId => {
 
 export const togglePartyMember = playerId => {
     return (dispatch, getState) => {
-        const player = getState().players.find(p => p.id === playerId)
-        if(player.party)
+        const player = getState().players.find(p => p.get('id') === playerId)
+        if(player.get('party'))
             dispatch(removePartyMemberRequest(playerId))
         else
             dispatch(selectPartyMemberRequest(playerId))

@@ -18,4 +18,4 @@ const playersPerQuest = [
     [3, 4, 4, 5, 5]
 ]
 
-export const getPartySizeForQuest = (numPlayers, questNumber) => playersPerQuest[numPlayers][questNumber]
+export const getPartySizeForQuest = (numPlayers, questNumber) => playersPerQuest[numPlayers - 5][questNumber - 1]

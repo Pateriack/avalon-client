@@ -21,5 +21,7 @@ export default class SocketHandler {
         socket.on(ActionTypes.UPDATE_QUESTS, payload => store.dispatch(updateQuests(payload.quests)))
         socket.on(ActionTypes.GIVE_PLAYER_INFO, payload => store.dispatch(setInfo(payload)))
         socket.on(ActionTypes.START_PARTY_SELECTION, () => store.dispatch(startPartySelection()))
+        socket.on(ActionTypes.SELECT_PARTY_MEMBER_FAILURE, payload => console.warn(payload.error))
+        socket.on(ActionTypes.REMOVE_PARTY_MEMBER_FAILURE, payload => console.warn(payload.error))
     }
 }
