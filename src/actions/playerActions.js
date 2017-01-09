@@ -83,3 +83,12 @@ export const togglePartyMember = playerId => {
             dispatch(selectPartyMemberRequest(playerId))
     }
 }
+
+export const confirmPartyRequest = () => {
+    return {
+        type: ActionTypes.CONFIRM_PARTY_REQUEST,
+        meta: {
+            socket: true
+        }
+    }
+}

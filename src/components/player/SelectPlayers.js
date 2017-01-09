@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {togglePartyMember} from '../../actions/playerActions'
+import {togglePartyMember, confirmPartyRequest} from '../../actions/playerActions'
 import {getPartySizeForQuest} from '../../utils'
 
 class SelectPlayers extends Component {
@@ -62,7 +62,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         togglePlayer: playerId => dispatch(togglePartyMember(playerId)),
-        confirmParty: () => console.log('confirm')
+        confirmParty: () => dispatch(confirmPartyRequest())
     }
 }
 
